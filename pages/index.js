@@ -4,10 +4,27 @@ import getUser from '../utils/getUser'
 const Index = ({ repos, user }) => {
     return (
         <div className="container mx-auto">
-            <h1 className="text-5xl">Olá eu sou o Magno Belloni</h1>
-            <h3 className="font-bold">{user.bio} - {user.location}</h3>
-            <h2 className="font-bold text-3xl">Meus repositórios do Github</h2>
-            <p>Github status: public repos:{user.public_repos} / followers: {user.followers}</p>
+            <div className="grid grid-cols-2 pt-16 leading-none">
+                <div>
+                    <h1 className="text-4xl uppercase">Hi, i'm Magno Belloni</h1>
+                    <h2 className="font-bold text-5xl uppercase">Software Engineer</h2>
+                    <h3 className="font-bold">{user.bio} - {user.location}</h3>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Linkedln:</li>
+                        <li>Github:</li>
+                    </ul>
+                    <p>Github status: public repos:{user.public_repos} / followers: {user.followers}</p>
+                </div>
+                <div><img src="/images/eu.png" alt="Eu" /></div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg py-12 px-16">
+                <h3 className="text-4xl text-center">What I do</h3>
+                <p className="text-2xl">Software Engineer</p>
+            </div>
+
+
             {repos.map(repo =>
                 (
                     <a href={repo.html_url} key={repo.name} target="_blank">
